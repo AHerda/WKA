@@ -1,24 +1,27 @@
-use rand::{Rng, thread_rng};
+mod libs;
+
+use libs::static_points;
+
+use crate::libs::{gen_vec, Wka};
 
 fn main() {
-    let mut v = vec![1,2,3,4,5,6,7,8,9];
-    v.shuffle();
-    println!("{:?}", v);
+    const N: u32 = 1000;
+    abc()
 }
 
-pub trait Shuffle {
-    fn shuffle(&mut self);
-}
+fn abc(n: u32, iterations: u32, avg_size: u32) -> (f64, f64, f64) {
+    let (mut a, mut b, mut c): (u32, u32, u32);
+    let (mut avg_a, mut avg_b, mut avg_c) = (0., 0., 0.);
+    for i in 0..iterations {
+        for j in 0..avg_size {
+            (a, b, c) = (0, 0, 0);
 
-impl<T> Shuffle for Vec<T>
-where T: Clone
-{
-    fn shuffle(&mut self) {
-        let mut rng = rand::thread_rng();
-        let end = self.len() - 1;
-        for i in 0..=end {
-            let j: usize = rng.gen::<usize>() % (end + 1 - i) + i;
-            self.swap(i, j)
+            let v = gen_vec(n);
+            match static_points(v) {
+                
+            };
         }
     }
+
+    (avg_a, avg_b, avg_c)
 }
