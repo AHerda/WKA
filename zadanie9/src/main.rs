@@ -1,6 +1,6 @@
 mod libs;
 
-use comfy_table::{modifiers::UTF8_ROUND_CORNERS, presets::UTF8_FULL, CellAlignment, Table};
+use comfy_table::{modifiers::UTF8_ROUND_CORNERS, presets::UTF8_FULL, CellAlignment, Table, ContentArrangement};
 use libs::{cycles, gen_vec, static_points, Wka};
 
 fn main() {
@@ -9,7 +9,8 @@ fn main() {
 
     table
         .load_preset(UTF8_FULL)
-        .apply_modifier(UTF8_ROUND_CORNERS);
+        .apply_modifier(UTF8_ROUND_CORNERS)
+        .set_content_arrangement(ContentArrangement::Dynamic);
 
     table.set_header(vec![
         "Array length",
