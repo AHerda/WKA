@@ -11,7 +11,7 @@ fn inverse_series<F>(f: F, n: u32) -> Vec<f64>
 where
     F: Fn(u32) -> f64,
 {
-    let a: Vec<f64> = (0..n).map(|n| f(n)).collect();
+    let a: Vec<f64> = (0..n).map(&f).collect();
     let mut results: Vec<f64> = vec![0_f64; n as usize];
     results[0] = 1_f64 / f(0);
 
@@ -27,7 +27,7 @@ where
     results
 }
 
-fn f1(n: u32) -> f64 {
+fn f1(_n: u32) -> f64 {
     1_f64
 }
 
