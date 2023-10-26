@@ -1,10 +1,10 @@
 use rayon::prelude::*;
 
 fn main() {
-    println!("{:?}", inverse_series(f1, 10));
-    println!("{:?}", inverse_series(f2, 10));
-    println!("{:?}", inverse_series(f3, 10));
-    println!("{:?}", inverse_series(f4, 10));
+    println!("Funkcja 1:\n{:?}\n", inverse_series(f1, 10));
+    println!("Funkcja 2:\n{:?}\n", inverse_series(f2, 10));
+    println!("Funckja 3:\n{:?}\n", inverse_series(f3, 10));
+    println!("Funckja 4:\n{:?}\n", inverse_series(f4, 10));
 }
 
 fn inverse_series<F>(f: F, n: u32) -> Vec<f64>

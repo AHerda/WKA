@@ -1,6 +1,8 @@
 mod libs;
 
-use comfy_table::{modifiers::UTF8_ROUND_CORNERS, presets::UTF8_FULL, CellAlignment, Table, ContentArrangement};
+use comfy_table::{
+    modifiers::UTF8_ROUND_CORNERS, presets::UTF8_FULL, CellAlignment, ContentArrangement, Table,
+};
 use libs::{cycles, gen_vec, static_points, Wka};
 
 fn main() {
@@ -23,8 +25,8 @@ fn main() {
         let (a, b, c) = abc(n, ITERATIONS);
         table.add_row(vec![
             format!("{}", n),
-            format!("{:.2}%", a),
-            format!("{:.2}%", b),
+            format!("{:.2}%", a * 100),
+            format!("{:.2}%", b * 100),
             format!("{:.2}", c),
         ]);
     }
@@ -32,8 +34,8 @@ fn main() {
         let (a, b, c) = abc(n, ITERATIONS);
         table.add_row(vec![
             format!("{}", n),
-            format!("{:.2}%", a),
-            format!("{:.2}%", b),
+            format!("{:.2}%", a * 100),
+            format!("{:.2}%", b * 100),
             format!("{:.2}", c),
         ]);
     }
@@ -41,8 +43,8 @@ fn main() {
     //     let (a, b, c) = abc(n, ITERATIONS);
     //     table.add_row(vec![
     //         format!("{}", n),
-    //         format!("{:.2}%", a),
-    //         format!("{:.2}%", b),
+    //         format!("{:.2}%", a * 100),
+    //         format!("{:.2}%", b * 100),
     //         format!("{:.2}", c),
     //     ]);
     // }
