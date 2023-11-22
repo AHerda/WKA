@@ -25,8 +25,8 @@ fn main() {
         let (a, b, c) = abc(n, ITERATIONS);
         table.add_row(vec![
             format!("{}", n),
-            format!("{:.2}%", a * 100),
-            format!("{:.2}%", b * 100),
+            format!("{:.2}%", a * 100_f64),
+            format!("{:.2}%", b * 100_f64),
             format!("{:.2}", c),
         ]);
     }
@@ -34,8 +34,8 @@ fn main() {
         let (a, b, c) = abc(n, ITERATIONS);
         table.add_row(vec![
             format!("{}", n),
-            format!("{:.2}%", a * 100),
-            format!("{:.2}%", b * 100),
+            format!("{:.2}%", a * 100_f64),
+            format!("{:.2}%", b * 100_f64),
             format!("{:.2}", c),
         ]);
     }
